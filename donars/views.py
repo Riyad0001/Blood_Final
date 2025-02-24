@@ -22,7 +22,7 @@ class UserRegistrationView(generics.CreateAPIView):
         # Send verification email
         uid = urlsafe_base64_encode(force_bytes(user.pk))
         token = default_token_generator.make_token(user)
-        verification_link = f"http://127.0.0.1:8000/api/auth/verify-email/{uid}/{token}/"
+        verification_link = f"https://blood-donation-awo3.onrender.com/api/auth/verify-email/{uid}/{token}/"
         
         send_mail(
             'Verify Your Email',
