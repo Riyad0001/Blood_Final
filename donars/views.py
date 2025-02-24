@@ -66,7 +66,7 @@ class UserLoginView(generics.GenericAPIView):
                 print(token)
                 print(_)
                 login(request, user)
-                return Response({'detail': 'Login successful'})
+                return Response({'token' : token.key, 'user_id' : user.id})
             return Response({'detail': 'Account not activated'}, status=status.HTTP_400_BAD_REQUEST)
         return Response({'detail': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
 
