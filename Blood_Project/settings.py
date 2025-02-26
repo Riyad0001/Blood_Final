@@ -100,6 +100,13 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+import os
+import dj_database_url
+
+DATABASES = {
+    'default': dj_database_url.config(default="postgresql://blood_project_user:IdnHscwkZTebW6NX8Zt2Jyj9dM1ByQHU@dpg-cut29ejqf0us739r34gg-a.oregon-postgres.render.com/blood_project")
+}
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
